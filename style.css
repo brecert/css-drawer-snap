@@ -1,0 +1,55 @@
+
+html {
+  background-color: #223;
+  color: #fff;
+  font-family: monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+nav {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 75vw 100vw 75vw;
+  grid-template-rows: 1;
+  overflow: auto;
+  contain: content;
+
+  scroll-snap-type: x mandatory;
+}
+
+nav > div {
+  background-color: #669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  scroll-snap-align: center;
+}
+
+nav > div:nth-child(even) {
+  background-color: #557;
+}
+
+.mid {
+  scroll-snap-stop: always;
+
+  overflow: auto;
+  white-space: pre-line;
+  height: 100%;
+
+  flex-wrap: wrap;
+}
+
+.mid > div {
+  padding: 1rem;
+}
+
+@media (min-width: 1050px) {
+  nav {
+    grid-template-columns: 350px auto 350px;
+  }
+}
