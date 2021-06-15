@@ -67,14 +67,14 @@ nav > div:nth-child(even) {
   @scroll-timeline block-slide-in-timeline {
     source: selector(#nav);
     orientation: horizontal;
-    
+
     /* apparently deprecated, but I can't find where */
     start: selector(#lhs) end 0;
     end: selector(#lhs) start 0;
 
     /* chrome doesn't recongnize so we use the deprecated method above */
-    scroll-offsets:
-      selector(#lhs) end 0,
+    scroll-offsets: 
+      selector(#lhs) end 0, 
       selector(#lhs) start 0;
 
     time-range: 1s;
@@ -94,12 +94,12 @@ nav > div:nth-child(even) {
   block-size: var(--height);
 
   bottom: calc(0px - var(--height));
-  
+
   display: flex;
   place-content: center;
   place-items: center;
-    
+
   background-color: #334;
-  
+
   box-sizing: border-box;
 }

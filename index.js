@@ -3,6 +3,7 @@ const dbg = (...args) => {
   return args[0];
 };
 
+// This could likely be done with target and hash, but I'll leave it alone for
 document.querySelectorAll("nav > .mid").forEach(
   (el) =>
     // even though onpointer events are closer to what I want
