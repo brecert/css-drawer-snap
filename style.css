@@ -8,6 +8,8 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+
+  touch-action: none;
 }
 
 nav {
@@ -18,6 +20,7 @@ nav {
   overflow: auto;
   contain: content;
 
+  touch-action: pan-x;
   scroll-snap-type: x mandatory;
 }
 
