@@ -26,33 +26,8 @@ window.onload = () => {
   document.querySelector(".mid").scrollIntoView();
 };
 
-const hookAnimations = () => {
-  const $images = document.querySelectorAll(".revealing-image");
-
-  $images.forEach(($image) => {
-    $image.animate(
-      {
-        clipPath: ["inset(0% 60% 0% 50%)", "inset(0% 0% 0% 0%)"]
-      },
-      {
-        duration: 1,
-        fill: "both",
-        timeline: new ScrollTimeline({
-          scrollSource: document.documentElement,
-          timeRange: 1,
-          fill: "both",
-          scrollOffsets: [
-            { target: $image, edge: "end", threshold: 0 },
-            { target: $image, edge: "start", threshold: 0 }
-          ]
-        })
-      }
-    );
-  });
-};
-
 async function polyfill() {
-  console.log('Loading JS polyfill')
+  console.info('Loading polyfill for ScrollTimeline https://wicg.github.io/scroll-animations/')
   await import("https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js");
   const $bottom = document.getElementById('bottom')
   const $nav = document.getElementById('nav')
@@ -67,7 +42,7 @@ async function polyfill() {
       timeline: new ScrollTimeline({
         timeRange: 1,
         orientation: 'inline',
-        scrollSource: $nav,
+        source: $nav,
         scrollOffsets: [
           { target: $lhs, edge: "end", threshold: 0 },
           { target: $lhs, edge: "start", threshold: 0 }

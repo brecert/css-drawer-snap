@@ -8,6 +8,7 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+  margin: 0;
 
   touch-action: none;
 }
@@ -26,7 +27,7 @@ nav {
 
 nav > div {
   background-color: #669;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 
@@ -57,7 +58,7 @@ nav > div:nth-child(even) {
   }
 }
 
-@supports (animation-timeline: works) {
+@supports (animation-timeline: initial) {
   @keyframes block-slide-in {
     from {
       bottom: 0;
